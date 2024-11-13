@@ -1,0 +1,485 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #000;
+    padding-top: 0px; /* Adjusted for navbar height */
+}
+
+/* Container umum */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+/* Konten teks */
+.text-content {
+    max-width: 50%;
+}
+
+.text-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.text-content a {
+    color: #e10600;
+    font-weight: bold;
+    border-bottom: 2px solid #e10600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.text-content a i {
+    margin-left: 10px;
+}
+
+/* Konten gambar */
+.image-content {
+    max-width: 45%;
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Styles */
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.carousel-inner {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-item img {
+    width: 500px;
+    height: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+/* Carousel Animations */
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-item {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    transition: transform 1s ease, opacity 1s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hover effect on images */
+.slider-img {
+    transition: transform 0.5s ease;
+}
+
+.carousel-item:hover .slider-img {
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Dots for Carousel */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carousel-indicators button {
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.carousel-indicators button.active {
+    background-color: #e10600;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    height: 90px;
+    width: 100%;
+    z-index: 5;
+    padding: 10px 0;  /* Adjusting padding for a more compact navbar */
+    transition: background-color 0.3s ease, padding 0.3s ease;
+    background-color: transparent; /* Navbar starts with transparent background */
+    display: flex;
+    justify-content: space-between; /* Space between brand, search, and nav links */
+    align-items: center;
+}
+
+/* Navbar Brand (Logo) */
+.navbar .navbar-brand {
+    font-size: 32px;
+    font-weight: bold;
+    color: #800000; /* Maroon red color for GV text */
+    margin-left: 20px; /* Space from the left edge */
+}
+
+/* Navbar Navigation */
+.navbar .navbar-nav {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Link Styling */
+.navbar .navbar-nav .nav-link {
+    font-size: 16px;
+    color: #fff; /* Navbar links color tetap putih */
+    font-weight: 500;
+    margin-left: 20px; /* Space between nav links */
+    text-decoration: none;
+}
+
+/* Navbar Link Hover */
+.navbar .navbar-nav .nav-link:hover {
+    color: #e10600; /* Hover effect color untuk navbar links */
+}
+
+/* Centered Search Bar */
+.navbar-search {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%; /* Adjust width of the search bar */
+}
+
+/* Search Input Styles */
+.navbar-search input[type="search"] {
+    width: 100%;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Navbar - Saat Scrolling */
+.navbar.scrolled {
+    background-color: #000 !important; /* Navbar becomes black when scrolling */
+    padding: 10px 0;  /* Adjust padding when scrolling */
+}
+
+/* Adjustments for video header (optional) */
+#video-header {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full height for video */
+    overflow: hidden;
+}
+
+#video-header video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure video stays behind content */
+}
+
+/* Big Letters */
+.big-letters {
+    font-size: 50px;
+    font-weight: bold;
+    color: #8B0000; /* Maroon color for big letters */
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    
+}
+
+/* Carousel Controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+}
+
+/* Dots for Carousel */
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.dots span {
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dots span.active {
+    background-color: #e10600;
+}
+
+/* View All News */
+.view-all-news {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #111;
+    color: #fff;
+    padding: 50px 0;
+}
+
+footer .social-media a {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-right: 15px;
+}
+
+footer .social-media a:hover {
+    color: #e10600;
+}
+
+footer .row a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .row a:hover {
+    color: #e10600;
+}
+
+footer hr {
+    border-color: #444;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .text-content {
+        max-width: 100%;
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .image-content img {
+        width: 100%;
+        height: auto;
+    }
+    .carousel .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .carousel .text-content {
+        text-align: center;
+        padding: 0 20px 30px;
+    }
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f4f4f4; /* Change this to match your design */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: #e10600; /* Red color for navigation buttons */
+    opacity: 0.8;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    opacity: 1;
+}
+
+.swiper-pagination-bullet {
+    background-color: #e10600;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #000;
+}
+/* Splash Screen CSS */
+#splash-screen {
+    background-color: black;  /* Latar belakang hitam */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;  /* Splash screen muncul langsung saat halaman dimuat */
+    transition: opacity 2s ease-out; /* Efek fade-out */
+}
+
+/* Logo container splash screen */
+#splash-screen .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;  /* Logo tidak terlihat saat pertama kali dimuat */
+    transition: opacity 2s ease-in;  /* Efek fade-in */
+}
+
+/* Animasi untuk logo splash screen */
+#splash-screen .big-letters {
+    font-size: 100px;
+    font-weight: bold;
+    color: #8B0000;
+    letter-spacing: 5px;
+}
+
+/* Animasi fade-in untuk logo splash screen */
+.fade-in {
+    opacity: 1 !important;
+}
+
+/* Logo navbar */
+.navbar .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo di navbar tetap terlihat tanpa animasi */
+.navbar .big-letters {
+    font-size: 50px;
+    font-weight: bold;
+    color: #800000;  /* Maroon color */
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Section Background */
+.fall-treats-section {
+    background-color: #ffffff; /* Background putih */
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Title Styling */
+.fall-treats-section h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000; /* Teks hitam */
+    margin-bottom: 40px;
+}
+
+/* Card Layout */
+.fall-treats-card {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+}
+
+/* Image Styling - Larger Image */
+.fall-treats-card img {
+    max-width: 400px; /* Ukuran gambar lebih besar */
+    margin-bottom: 15px;
+}
+
+/* Text Styling for Product Titles */
+.fall-treats-card h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000000; /* Teks hitam */
+    margin-bottom: 10px;
+}
+
+/* Link Styling */
+.fall-treats-card a {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #000000; /* Teks hitam */
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.fall-treats-card a:hover {
+    text-decoration: underline;
+    color: #555555; /* Warna teks saat hover */
+}
+
+/* Responsive Grid Layout */
+@media (min-width: 768px) {
+    .fall-treats-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .fall-treats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
